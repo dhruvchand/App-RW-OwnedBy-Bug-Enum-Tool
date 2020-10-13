@@ -1,7 +1,7 @@
 
-####Identifying Service Principals affected by the bug in the Application.ReadWrite.OwnedBy Application Resource Permission
+#### Identifying Service Principals affected by the bug in the Application.ReadWrite.OwnedBy Application Resource Permission
 
-##Introduction
+## Introduction
 
 
 Microsoft identified a bug in the Application.ReadWrite.OwnedBy permission that caused applications (henceforth called Creator apps) that programmatically create service principals from other applications (hence forth called a Backing App) to create service principals from backing applications that are not owned by the Creator App. The permission should only allow the creation of service principals from backing apps owned by the creator app. 
@@ -15,7 +15,7 @@ Here are some of the mitigation options available:
 
 
 
-##How to run this script
+## How to run this script
 
 1. Connect to your Azure AD Tenant using
 `Connect-AzureAD`
