@@ -20,9 +20,9 @@ Here are some of the mitigation options available:
 1. Connect to your Azure AD Tenant using
 `Connect-AzureAD`
 
-2. Run the script with the list of App IDs provided to you
+2. Run the script with the list of App IDs provided to you, separated by spaces:
 
-`EnumarateAffedtedSp.ps1 [appid1, appid2, ...]`
+`EnumarateAffedtedSp.ps1 [appid1 appid2 ...]`
 
 The arguments to this script are a list of application IDs that were sent to you as applications that are affected by this bug. 
 
