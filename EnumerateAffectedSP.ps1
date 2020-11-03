@@ -1,6 +1,7 @@
 
 # Input list is a list of creator applications that had used this permission in an unintentional way (from App.RW.OB spreadsheet)
-$OwnerApps = $args
+$OwnerApps = $args |  % {$_.ToLower()}
+
 
 $principals = Get-AzureADServicePrincipal -All:$true
 
@@ -24,7 +25,7 @@ Foreach ($principal in $principals)
 
     $SPOwnerIds = (Get-AzureADServicePrincipalOwner -ObjectId $SPObjId).ObjectId
     
-
+    # Write-Output "SP owners: $SPOwnerIds "
     # Consider only those SP owner(s) that are from our original creator app list
     $SPOwnerId = $SPOwnerIds | ?{$OwnerApps -contains $_}
 
@@ -33,6 +34,8 @@ Foreach ($principal in $principals)
         Continue
     }
 
+    
+    
     # Write-Output "SP owner: $SPOwnerId "
     # Write-Output "backing app id: $appId "
 
